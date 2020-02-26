@@ -26,4 +26,19 @@ class Leagueapi {
       division
     };
   }
+
+  async getChampions(summonerId, server) {
+    const championsResponse = await fetch(
+      `https://${server}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}?api_key=${this.client_id}`
+    );
+    const allChampionsResponse = await fetch("champion.json");
+
+    const champions = await championsResponse.json();
+    const allChampions = await allChampionsResponse.json();
+
+    return {
+      champions,
+      allChampions
+    };
+  }
 }

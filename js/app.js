@@ -17,17 +17,32 @@ searchUser.addEventListener("keyup", e => {
         }
       } else {
         ui.showProfile(data.profile);
-        console.log(data);
         const summonerId = data.profile.id;
 
         leagueapi.getDivision(summonerId, serverValue).then(divisionData => {
-          console.log(divisionData);
+          if (divisionData.division.length !== 0) {
+            ui.showDivision(divisionData.division);
+            console.log(divisionData.division);
+          } else {
+            ui.clearDivision();
+          }
+        });
 
-          ui.showDivision(divisionData.division);
+        leagueapi.getChampions(summonerId, serverValue).then(championsData => {
+          if (championsData.champions.length !== 0) {
+            ui.showChampions(
+              championsData.champions,
+              championsData.allChampions
+            );
+          } else {
+            ui.clearChampions();
+          }
         });
       }
     });
   } else {
     ui.clearProfile();
+    ui.clearDivision();
+    ui.clearDivision();
   }
 });
