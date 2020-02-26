@@ -22,8 +22,8 @@
         <div class="form-group">
           <label for="servers">Select server</label>
           <select class="form-control" id="servers">
-            <option>EUN1</option>
-            <option>EUW1</option>
+            <option id="EUN1">EUNE</option>
+            <option id="EUW1">EUW</option>
             <option>NA</option>
             <option>KR</option>
             <option>OCE</option>
@@ -37,7 +37,13 @@
         />
       </div>
       <br />
-      <div id="profile"></div>
+      <div class="card card-body mb-3">
+        <div class="row">
+          <div class="col-md-3" id="profile"></div>
+          <div class="col-md-5" id="division"></div>
+          <div class="col-md-5"></div>
+        </div>
+      </div>
     </div>
 
     <footer class="mt-5 p-3 text-center bg-light">League Finder &copy;</footer>
