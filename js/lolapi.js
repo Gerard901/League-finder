@@ -1,6 +1,6 @@
 class Leagueapi {
   constructor() {
-    this.client_id = "RGAPI-7dccc6e0-3ae5-4d38-acac-11435f4d6c46";
+    this.client_id = LOL_CLIENT_ID;
   }
 
   async getUser(user, server) {

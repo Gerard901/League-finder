@@ -43,6 +43,6 @@ searchUser.addEventListener("keyup", e => {
   } else {
     ui.clearProfile();
     ui.clearDivision();
-    ui.clearDivision();
+    ui.clearChampions();
   }
 });
